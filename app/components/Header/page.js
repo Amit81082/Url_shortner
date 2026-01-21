@@ -24,7 +24,9 @@ export default function Header({user}) {
       <div className="flex items-center gap-4 text-sm">
         <span className="text-gray-300 gap-3 font-bold">
           Hi,{" "}
-          <span className="text-sky-500 font-bold text-sm">{user.name}</span>
+          <span className="text-sky-500 font-bold text-sm">
+            {user?.name || ""}
+          </span>
         </span>
 
         <button
@@ -36,7 +38,7 @@ export default function Header({user}) {
             <p className="text-green-500 text-xs font-bold text-center">
               Wait a moment..
             </p>
-          ): (
+          ) : (
             "Logout"
           )}
         </button>
