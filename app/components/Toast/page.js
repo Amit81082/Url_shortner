@@ -3,7 +3,7 @@ function Toast({ toast }) {
 
   return (
     <div
-      className={`fixed bottom-20 right-6 px-4 py-2 rounded-lg text-white
+      className={`fixed bottom-30 right-6 px-4 py-2 rounded-lg text-white
         ${toast.type === "success" ? "bg-green-600" : "bg-red-600"}`}
     >
       {toast.msg}
