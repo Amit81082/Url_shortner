@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="w-full border-t border-slate-800 bg-slate-900 mt-4 sticky bottom-0">
+    <footer className="w-full border-t border-slate-800 bg-slate-900 mt-4">
       <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row gap-1 items-center justify-between text-xs font-bold text-gray-400 ">
         {/* LEFT */}
         <div className="flex items-center gap-2">
