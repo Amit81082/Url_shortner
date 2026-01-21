@@ -1,10 +1,10 @@
-import Login from "./login/page";
+import SignupPage from "./signUp/page";
 
 export default function AuthPage() {
 
   return (
     <>
-      <Login />
+      <SignupPage />
     </>
   )
 }

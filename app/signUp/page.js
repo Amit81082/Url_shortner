@@ -56,6 +56,7 @@ export default function SignupPage() {
           <h2 className="text-xl font-bold text-center">
             Join <span className="text-sky-400">Shorty</span>
           </h2>
+          <p className="text-xs font-bold text-center text-gray-500">And Convert your long Urls to short Urls</p>
 
           <input
             placeholder="Name"
