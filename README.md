@@ -1,35 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# URL Shortener
 
-## Getting Started
+A simple URL shortener built with Next.js and MongoDB.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+* Shorten long URLs
+* Track clicks on shortened URLs
+* User authentication and authorization
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## How to use
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+1. Shorten a long URL by sending a POST request to `/api/shorten`.
+2. Get the shortened URL by sending a GET request to `/api/shorten/:code`.
+3. Track clicks on a shortened URL by sending a GET request to `/api/shorten/:code/stats`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## API Endpoints
 
-## Learn More
+### Shorten a long URL
 
-To learn more about Next.js, take a look at the following resources:
+* **POST** `/api/shorten`
+	+ Request body: `{"url": "https://example.com"}`
+	+ Response: `{"code": "abcd", "longUrl": "https://example.com", "clicks": 0}`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Get shortened URL
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+* **GET** `/api/shorten/:code`
+	+ Request params: `{"code": "abcd"}`
+	+ Response: `{"code": "abcd", "longUrl": "https://example.com", "clicks": 0}`
 
-## Deploy on Vercel
+### Track clicks on shortened URL
+
+* **GET** `/api/shorten/:code/stats`
+	+ Request params: `{"code": "abcd"}`
+	+ Response: `{"clicks": 1}`
+
+## Local Development
+
+1. Clone the repository and install dependencies with `npm install` or `yarn install`.
+2. Start the development server with `npm run dev` or `yarn dev`.
+3. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Deployment
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
