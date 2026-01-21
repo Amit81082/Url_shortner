@@ -25,7 +25,7 @@ export default function HomePage() {
   return (
     <>
       <Header user={user} />
-      <HomeClient user={user} />
+      <HomeClient />
     </>
   );
 }

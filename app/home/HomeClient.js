@@ -5,7 +5,7 @@ import { Eye, Copy, Trash2, ExternalLink } from "lucide-react";
 import { timeAgo } from "@/lib/timeAgo";
 import Toast from "@/app/components/Toast/page";
 
-export default function Home({ user }) {
+export default function Home() {
   const [longUrl, setLongUrl] = useState("");
   const [error, setError] = useState("");
   const [urls, setUrls] = useState([]);
