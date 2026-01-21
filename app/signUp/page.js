@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import AuthHeader from "../AuthHeader/page";
+import {Eye, EyeOff} from "lucide-react";
 
 export default function SignupPage() {
   const router = useRouter();
@@ -12,6 +13,8 @@ export default function SignupPage() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [showPass, setShowPass] = useState(false);
+
 
    useEffect(() => {
      fetch("/api/auth/me").then((res) => {
@@ -56,7 +59,9 @@ export default function SignupPage() {
           <h2 className="text-xl font-bold text-center">
             Join <span className="text-sky-400">Shorty</span>
           </h2>
-          <p className="text-xs font-bold text-center text-gray-500">And Convert your long Urls to short Urls</p>
+          <p className="text-xs font-bold text-center text-gray-500">
+            And Convert your long Urls to short Urls
+          </p>
 
           <input
             placeholder="Name"
@@ -71,7 +76,7 @@ export default function SignupPage() {
           />
           <div className="grid grid-cols-2 gap-4">
             <input
-              type="password"
+              type={showPass ? "text" : "password"}
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -79,12 +84,21 @@ export default function SignupPage() {
             />
 
             <input
-              type="password"
+              type={showPass ? "text" : "password"}
               placeholder="Password Confirmation"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               className="bg-slate-800 px-4 py-2 rounded"
             />
+
+            <div className="flex items-center justify-center col-span-2 gap-2">
+              <span
+                className="text-gray-500 bg-slate-800 p-2 rounded cursor-pointer hover:bg-slate-850 transition"
+                onClick={() => setShowPass(!showPass)}
+              >
+                {showPass ? <Eye /> : <EyeOff />}
+              </span>
+            </div>
           </div>
           {error && (
             <p className="text-red-400 text-sm font-bold text-center">
