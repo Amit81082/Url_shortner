@@ -78,7 +78,10 @@ export default function Home() {
   const handleDelete = async (id) => {
     setLoading(true);
     const ok = confirm("Delete this short url?");
-    if (!ok) return;
+    if (!ok) {
+      setLoading(false);
+      return;
+    }
     await fetch(`/api/delUrl/${id}`, { method: "DELETE" });
 
     setUrls((prev) => prev.filter((u) => u._id !== id));
