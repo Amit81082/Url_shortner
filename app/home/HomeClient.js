@@ -106,7 +106,7 @@ export default function Home() {
             value={longUrl}
             onChange={(e) => setLongUrl(e.target.value)}
             className="w-full p-4 bg-slate-800 text-white rounded"
-            placeholder="Paste URL"
+            placeholder="Paste Any URL"
           />
 
           <button

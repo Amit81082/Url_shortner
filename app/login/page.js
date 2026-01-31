@@ -48,7 +48,7 @@ export default function LoginPage() {
           <h2 className="text-xl font-bold text-center">
             Get <span className="text-orange-500">Started</span> Today
           </h2>
-          <p className="text-gray-500 text-xs font-bold text-center">Hey Bro 🖐 ! login to your acount so you can manage your short urls more securely</p>
+          <p className="text-gray-500 text-xs font-bold text-center">Hey Bro 🖐, Login with the same email that you signed up with.</p>
 
           <input
            name="email"
